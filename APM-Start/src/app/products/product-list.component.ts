@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
+import { ConditionalExpr } from '@angular/compiler';
 
 @Component({
   selector: "pm-products",
@@ -59,6 +60,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("In OnInit");
+  }
+
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Product List: ' + message;
   }
 
   performFilter(filterBy: string): IProduct[] {
